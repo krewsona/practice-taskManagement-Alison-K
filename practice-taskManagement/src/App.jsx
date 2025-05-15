@@ -2,12 +2,14 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import TaskList from './components/TaskList';
 import TaskDetail from './components/TaskDetail';
+import './App.css';
+
 
 function App() {
   return (
     <Router>
       <div>
-        <h1>Task Viewer</h1>
+        <h1 className='task-container'>My Tasks</h1>
         <Routes>
           <Route path="/" element={<TaskList />} />
           <Route path="/task/:taskId" element={<TaskDetail />} />

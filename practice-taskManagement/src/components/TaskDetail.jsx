@@ -5,19 +5,22 @@ import {tasks} from './TaskList';
 const TaskDetail = () => {
     const { taskId } = useParams();
     
-    //find method
-    const task = tasks.find(t => t.id === taskId);
+    
+    const task = tasks.find(taskItems => taskItems.id === taskId);
 
     return(
-        <div>
+        <div className='task-container'>
             {task 
                 ? (<div>
                     <h2>{task.title}</h2>
                     <p>{task.description}</p>
                 </div>) 
                 : (<p> Task not found. Please check the ID.</p>)}
-            
-            <Link to="/"> Back to Task List</Link>
+<br />
+            <button className = "back-button">
+                <Link to="/"> Back to Task List</Link>
+            </button>
+
         </div>
     );
 };

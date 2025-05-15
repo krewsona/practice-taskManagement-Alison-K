@@ -10,11 +10,11 @@ const tasks = [
 
 const TaskList = () => {
     return (
-        <div>
+        <div className='task-container'>
             <h2> Task List</h2>
             <ul>{tasks.map(task => (
                 <li key={task.id}>
-                    <Link to={`/task/${task.id}`}>{task.title}</Link>
+                    <Link to={`/task/${task.id}`} className='back-button'>{task.title}</Link>
                 </li>                   
                 ))}
             </ul>
